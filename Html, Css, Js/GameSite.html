@@ -1,0 +1,380 @@
+<!DOCTYPE html><!--I dont really have any outside sources (as I made all my own images) except for the one external website at cool math games...hopefully i dont lose those points-->
+<html>
+    <head>
+        <title>"Blocked"</title>
+        <link href="./style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Press+Start+2P&display=swap" rel="stylesheet">
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <img src="../ImagesAndGIFs/black.png" id="cellfloor">
+        <img src="../ImagesAndGIFs/cellfloor1.png" id="cellfloor1">
+        <img src="../ImagesAndGIFs/shipdeck.png" id="shipbackground">
+        <section id="navsection">
+            <img src="../ImagesAndGIFs/BlockedV4.png" id="BlockedV3">
+            <div id="buttons">
+                <button class="button" id="button1">Level Select</button>
+                <button class="button" id="button2">How to Play</button>
+                <button class="button" id="button3">Credits</button>
+            </div>
+            <img src="../ImagesAndGIFs/FullShip1.png" id="buttonbg">
+            <img src="../ImagesAndGIFs/8x8Box.png" id="box2">
+            <img src="../ImagesAndGIFs/8x8Box.png" id="box3">
+            <img src="../ImagesAndGIFs/8x8Wall.png" id="wall1">
+            <img src="../ImagesAndGIFs/Paintbrush.png" id="paint1">
+        </section>
+        <section id="soundstuff">
+            <audio id="backgroundaudio" src="../ImagesAndGIFs/KnightsTemplar.mp3" type="audio/mpeg" loop>No Audio</audio> <!--divisive alliance for final level or between worlds or crusaders -->
+            <audio id="backgroundaudio1" src="../ImagesAndGIFs/BetweenWorlds.mp3" type="audio/mpeg" loop>No Audio</audio>
+            <audio id="backgroundaudio2" src="../ImagesAndGIFs/BarefootAdventures.mp3" type="audio/mpeg" loop>No Audio</audio>
+            <button id="playAudioButton">Play Audio</button>
+            <button id="pauseAudioButton">Pause Audio</button>
+            <p id="soundcomment">(Idk why I chose Knights Templar just gave good vibes for grinding out coding and debugging)</p>
+        </section>
+        <section id="LevelSelect">
+            <img src="../ImagesAndGIFs/LevelSelect1.png" id="LevelSelectbg">
+            <p value="0" id="gotoLevel0">1</p>
+            <p value="1" id="gotoLevel1">2</p>
+            <p value="2" id="gotoLevel2">3</p>
+            <p value="3" id="gotoLevel3">4</p>
+            <p value="4" id="gotoLevel4">5</p>
+            <p value="5" id="gotoLevel5">6</p>
+            <p value="6" id="gotoLevel6">7</p>
+            <p value="7" id="gotoLevel7">8</p>
+            <p value="8" id="gotoLevel8">9</p>
+            <p value="9" id="gotoLevel9">10</p>
+        </section>
+        <section id="notifications">
+            <p>Level Notes:</p>
+            <p id="levelGoals"></p>
+        </section>
+        <img src="../ImagesAndGIFs/BlockedIntroV2.gif" class="gif Pause">
+        <p id="skipintro" class="link Pause">Skip Intro</p>
+        <img src="../ImagesAndGIFs/black.png" id="makeLintoQ">
+        <!--<select id="dropdown">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>-->
+        <button id="startGame">Start Game</button>
+        <br>
+        <button id="resetLevel">Reset Level</button>
+        <br>
+        <button id="backtomain1">Main Menu</button>
+        <br>
+        <button id="moveUp"><img src="../ImagesAndGIFs/UpArrow.png"></button>
+        <br>
+        <button id="moveLeft"><img src="../ImagesAndGIFs/LeftArrow.png"></button>
+        <button id="moveDown"><img src="../ImagesAndGIFs/DownArrow.png"></button>
+        <button id="moveRight"><img src="../ImagesAndGIFs/RightArrow.png"></button>
+        <table id="key">
+            <tr>
+                <td>Player</td>
+                <th class="player" id="keyplayer"></th>
+            </tr>
+            <tr>
+                <td>Box</td>
+                <th class="box" id="keybox"></th>
+            </tr>
+            <tr>
+                <td>Wall</td>
+                <th class="begreypls" id="keybegreypls"></th>
+            </tr>
+            <tr>
+                <td>Exit</td>
+                <th class="keyexit" id="keyexit">abox</th>
+            </tr>
+            <tr>
+                <td>Level moves</td>
+                <td id="levelMoves">0</td>
+            </tr>
+            <tr>
+                <td>Total Moves</td>
+                <td id="totalMoves">0</td>
+            </tr>
+            <tr>
+                <td>Total Resets</td>
+                <td id="totalResets">0</td>
+            </tr>
+            <tr>
+                <td>Time Wasted tryna finish this game</td>
+                <td id="timer">0</td>
+            </tr>
+        </table>
+        <img src="../ImagesAndGIFs/black.png" id="dimmer1">
+        <table id="game">
+            <tr>
+                <th colspan="12" id="tablehead">Level 1</th>
+            </tr>
+            <tr class="y1">
+                <td class="nopass wall x1">1</td>
+                <td class="nopass wall x2">2</td>
+                <td class="nopass wall x3">3</td>
+                <td class="nopass wall x4">4</td>
+                <td class="nopass wall x5">5</td>
+                <td class="nopass wall x6">6</td>
+                <td class="nopass wall x7">7</td>
+                <td class="nopass wall x8">8</td>
+                <td class="nopass wall x9">9</td>
+                <td class="nopass wall x10">10</td>
+                <td class="nopass wall x11">11</td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y2">
+                <td class="nopass wall x1">2</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y3">
+                <td class="nopass wall x1">3</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y4">
+                <td class="nopass wall x1">4</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y5">
+                <td class="nopass wall x1">5</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y6">
+                <td class="nopass wall x1">6</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="exit x12"></td>
+            </tr>
+            <tr class="y7">
+                <td class="nopass wall x1">7</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y8">
+                <td class="nopass wall x1">8</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y9">
+                <td class="nopass wall x1">9</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y10">
+                <td class="nopass wall x1">10</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y11">
+                <td class="nopass wall x1">11</td>
+                <td class="x2"></td>
+                <td class="x3"></td>
+                <td class="x4"></td>
+                <td class="x5"></td>
+                <td class="x6"></td>
+                <td class="x7"></td>
+                <td class="x8"></td>
+                <td class="x9"></td>
+                <td class="x10"></td>
+                <td class="x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+            <tr class="y12">
+                <td class="nopass wall x1"></td>
+                <td class="nopass wall x2"></td>
+                <td class="nopass wall x3"></td>
+                <td class="nopass wall x4"></td>
+                <td class="nopass wall x5"></td>
+                <td class="nopass wall x6"></td>
+                <td class="nopass wall x7"></td>
+                <td class="nopass wall x8"></td>
+                <td class="nopass wall x9"></td>
+                <td class="nopass wall x10"></td>
+                <td class="nopass wall x11"></td>
+                <td class="nopass wall x12"></td>
+            </tr>
+        </table>
+        <img src="../ImagesAndGIFs/black - Copy.png" id="makeLevelbg">
+        <section id="makeLevel">
+            <div>
+                <section id="makeLevelButtons">
+                    <h4>Choose your Color:</h4>
+                    <p>Current Color:</p>
+                    <p id="colorChosen">Your Color</p>
+                    <div>
+                        <input type="radio" value="black" id="radio1" name="color">
+                        <label for="radio1">Black</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="Red" id="radio2" name="color">
+                        <label for="radio2">Red</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="tan" id="radio3" name="color">
+                        <label for="radio3">Tan</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="lightgrey" id="radio4" name="color">
+                        <label for="radio4">Light Grey</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="grey" id="radio5" name="color">
+                        <label for="radio5">Grey</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="transparent" id="radio6" name="color">
+                        <label for="radio6">Transparent</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="brown" id="radio7" name="color">
+                        <label for="radio7">brown</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="yellow" id="radio8" name="color">
+                        <label for="radio8">yellow</label>
+                    </div>
+                    <br>
+                    <button id="backtomain">Click to go Back to main page</button>
+                </section>
+                <table id="grid"></table>
+            </div>
+        </section>
+        <section id="stats">
+            <img src="../ImagesAndGIFs/black.png" id="statsbg">
+            <table id="endStats">
+                <tr>
+                    <td>Level #</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td># Moves</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>

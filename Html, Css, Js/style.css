@@ -1,0 +1,442 @@
+body{  /* This rule set makes every page have a black background and applies the fonts used */
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+}
+span{  /* This applies this font to the Secret of Mana text on the main page */
+    font-family: "Jacquarda Bastarda 9"; 
+}
+td {   /* This formats all tables to have a similar size */
+    width: 40px;
+    height: 40px;
+    border-collapse:collapse;
+}  /* the next 5 rulesets help to make the tables so that every cell is colored in and you can see where the indivisual cells are */
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.blank{
+    background-color: darkgray;
+}
+#keybox{
+    background-color: brown;
+}
+.player{
+    background-color: red;
+}
+.blank,.box,.player{
+    border:1px solid white;
+}
+.keyexit{
+    background-color: white;
+}
+.link{   /* This makes all elements with the link class look like buttons */
+    font-family: "Press Start 2P";
+    font-size: x-small;
+    color: aquamarine;
+    border: 2px solid rgb(221, 221, 221);
+    background-color: rgb(90, 90, 90);
+    border-radius: 20px;
+    padding: 4px;
+    box-shadow: 3px 3px grey;
+    text-decoration: none;
+}   /* This makes the shadow disapear when a link is hovered over causing the user to know its a button */
+.link:hover{
+    box-shadow: 0px 0px grey;
+}
+input{  /* Hides the Checkbox */
+    display: none;
+}
+.menu li{   /* makes the list elements for the menu to be spaced a little better */
+    list-style-type: none;
+    margin: 13px;
+}
+#menu-toggle:checked + h4 + ul {   /* If the checkbox ic checked show the links */
+    display: block;
+}
+#menu-toggle + h4 + ul {  /* if it isnt hide them */
+    display: none;
+}
+#menu-toggle:checked + h4 .arrow {   /* causes the arrow icon to rotate down, this helps the user to know that they can hide the links by clicking it again */
+    transform: rotate(90deg);
+}
+.arrow {   /* this makes it so that when your cursor hovers over the icon it will change to the one with a pointer finger so that you know that you can click it */
+    cursor: pointer;
+    display: inline-block;
+}
+.menu:hover{
+    cursor: pointer;
+}
+.gif {  /* Puts gif at the front and plays animations on it */
+    z-index: 4;
+    position: absolute;
+    animation: opacity 40s 1;
+    animation-fill-mode: forwards;
+    margin:0px;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+}
+#BlockedV3 {   /* Just putting in the name of the game */
+    position: absolute;
+    z-index: 3;
+    width: 60%;
+    height: 25%;
+    left: 20%;
+    top: 9%;
+    animation: updown 10s infinite;
+}
+#buttons{
+    flex-direction: column;
+    position: absolute;
+    margin-top: 20%;
+    width: 30%;
+    align-items: center;
+    left: 35%;
+    z-index: 4;
+}
+.button{
+    align-items: center;
+    position: relative;
+    width: 80%;
+    height: 10%;
+    padding: 3%;
+    font-size: larger;
+    margin: 15px;
+}
+
+/*#buttons{
+    flex-direction: column;
+    position: relative;
+    width: 40%;
+    left: 30%;
+    margin-top:20%;
+
+    border: 1px white solid;
+}
+#button1, #button2, #button3 {
+    width: 80%;
+    background-color: lightgray;
+    padding: 3%;
+    height: 10%;
+    border-radius: 5px;
+    text-align: center;
+}*/
+
+#button1{
+    animation: button1 10s infinite;
+}
+#button2{
+    animation: button2 10s infinite;
+}
+#button3{
+    animation: button3 10s infinite;
+}
+@keyframes button1 {
+    0% {width: 80%;}
+    0% {padding: 3%;}
+    16% {width: 95%;}
+    16% {padding: 4%;}
+    33% {width: 80%;}
+    33% {padding: 3%;}
+}
+@keyframes button2 {
+    33% {width: 80%;}
+    33% {padding: 3%;;}
+    49% {width: 95%;}
+    49% {padding: 4%;}
+    66% {width: 80%;}
+    66% {padding: 3%;;}
+}
+@keyframes button3 {
+    66% {width: 80%;}
+    66% {padding: 3%;;}
+    83% {width: 95%;}
+    83% {padding: 4%;}
+    100% {width: 80%;}
+    100% {padding: 3%;;}
+}
+
+main {
+    position: relative;
+    top: 600px;
+}
+@keyframes updown {
+    0% {top: 9%;}
+    16% {top: 6%}
+    33% {top: 9%;}
+    49% {top: 6%}
+    66% {top: 9%;}
+    83% {top: 6%}
+    100% {top: 9%;}
+}
+@keyframes opacity {   /* Adding animations to make the skip intro and the intro fade out after a certain amount of time */
+    0% {z-index: 4;}
+    0% { opacity: 100%; }
+    0% { display: block; }
+    50% { opacity: 100%; }
+    60% { opacity: 0%; }
+    60% {z-index: 4;}
+    61% {z-index: -1;}
+    100% { opacity: 0%; }
+    100% { display: none; }
+    100% { z-index: -1;}
+}
+#skipintro{   /* Adding a button that allows for the intro to be skipped and making it fade out */
+    position: absolute;
+    z-index: 5;
+    top: 92%;
+    left: 90%;
+    animation: opacity 15s 1;
+    animation-fill-mode: forwards;
+}
+#game{   /* moving the table and also making it scale with size of window */
+    border: 1px solid white;
+    margin: 0px;
+    position: absolute;
+    top: 2%;
+    left: 26%;
+}
+.begreypls{   
+    background-color: gray;
+}
+#key{   /* Putting the key into place using % so that changing window size doenst make it look bad*/
+    position: absolute;
+    top: 12%;
+    left: 7%;
+}
+td{   /* giving tables a border */
+    border: 1px solid white;
+}
+div{  /* setting display to flex for certain objects so that they appear on the same line and save space as well as eliminate blank space */
+    display: flex;
+}
+.nooutline{  /* some cells I dont want an outline on so use higher specificity so that their outline isnt visible */
+    border: 1px solid black;
+}
+#actLikeATdLolButNotTotallySoBeKindaSimlarToAStringVariableTypeWhereYouArePartOneThing-Reference-ButAlsoPartAnother-Primative-{
+    width: 30px;
+    height:30px;
+    border: 1px solid white;
+}
+#moveRight, #moveLeft, #moveUp, #moveDown{
+    display: none;
+    width: 30px;
+    color: red;
+}
+#hintselectlevel{
+    background-color: black;
+    color: white;
+}
+#makeLevel{
+    position: relative;
+    left: 60%;
+}
+input{
+    color: white;
+    background-color: white;
+    /*color: rgb(65, 65, 65);*/
+}
+#buttonbg{
+    z-index: 2;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+#backgroundaudio{
+    z-index: 6;
+}
+#box2, #box3, #wall1, #paint1{
+    z-index: 3;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+#box2{
+    left: 31.5%;
+    bottom: 41.5%;
+}
+#box3{
+    left: 78.2%;
+    bottom: 44.5%;
+}
+#wall1{
+    left: 78.2%;
+    bottom: 34.5%;
+}
+#paint1{
+    left: 75.1%;
+    bottom: 13.65%;
+}
+#makeLevel{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    display: none;
+    z-index: 7;
+}
+#makeLevelbg{
+    z-index: 6;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+#makeLevelButtons input[type="radio"] {
+    display: block;
+}
+#makeLevelButtons{
+    background-color: rgb(51, 51, 51);
+    padding: 10px;
+    border-radius: 5px;
+}
+#colorChosen{
+    padding: 3px;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+#soundstuff{
+    z-index: 7;
+    position: absolute;
+    right: 0%;
+}
+#soundcomment {
+    width: 200px;
+}
+#shipbackground{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+}
+#notifications{
+    position: absolute;
+    left: 69%;
+    top: 1%;
+    width: 15%;
+}
+#cellfloor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+}
+#cellfloor1{
+    position: absolute;
+    width: 514px;
+    height: 514px;
+    top: 5.5%;
+    left: 26%;
+    z-index: -2;
+}
+#dimmer1 {
+    position: absolute;
+    z-index: 0;
+    opacity: 30%;
+    left:0%;
+    top:0%;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+#makeLintoQ{
+    position: absolute;
+    z-index: 10;
+    animation: changeQ 4.3s 1;
+    animation-fill-mode: forwards;
+    top: 47%;
+    left: 34.8%;
+    width: 1%;
+    height: 9%;
+}
+@keyframes changeQ {   /* Adding animations to make the skip intro and the intro fade out after a certain amount of time */
+    0% {display: none;}
+    72% {display: none;}
+    73% {display: block;}
+    99% {display: block;}
+    100% {display: none;}
+}
+#LevelSelect{
+    position: absolute;
+    z-index: 5;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top:0%;
+    left:0%;
+}
+#LevelSelect p{
+    position: absolute;
+    font-size: 100px;
+    font-weight: 900;
+    color:grey;
+}
+#LevelSelectbg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#gotoLevel0{
+    top: 5%;
+    left: 13.15%;
+}
+#gotoLevel1{
+    top: 5%;
+    left: 30.6%;
+}
+#gotoLevel2{
+    top: 5%;
+    left: 47.5%;
+}
+#gotoLevel3{
+    top: 5%;
+    left: 64.7%;
+}
+#gotoLevel4{
+    top: 5%;
+    left: 82%;
+}
+#gotoLevel5{
+    top: 43.3%;
+    left: 13.15%;
+}
+#gotoLevel6{
+    top: 43.3%;
+    left: 30.6%;
+}
+#gotoLevel7{
+    top: 43.3%;
+    left: 47.5%;
+}
+#gotoLevel8{
+    top: 43.3%;
+    left: 64.7%;
+}
+#gotoLevel9{
+    top: 43.3%;
+    left: 79.7%;
+}
+#stats{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0%;
+    left: 0%;  
+    color: white; 
+}
+#statsbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+}
+#endStats{
+    position: absolute;
+    z-index: 21;
+}
